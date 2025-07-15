@@ -1,4 +1,5 @@
-API Testing Script for Restful Booker
+**API Testing Script for Restful Booker**
+
 Overview
 This Python script is designed to test various API endpoints of the Restful Booker service. It includes functions for performing CRUD operations (Create, Read, Update, Delete) and logs all the interactions into a log file. At the end, the log is converted into an HTML file for easy review.
 
@@ -34,6 +35,10 @@ bash
 Copy
 Edit
 pip install requests
+pip install json
+pip install logging
+pip install os
+
 Script Details
 Functions
 test_get_all_bookings():
@@ -74,8 +79,10 @@ Differentiates log levels with color (INFO in green, ERROR in red).
 
 Example Usage
 To run the script:
+python test_get_all_bookings.py
 
 Run the Script:
+python test_get_all_bookings.py
 
 This will execute all the tests sequentially (GET, POST, PATCH, DELETE) and generate the HTML log.
 
@@ -163,8 +170,10 @@ End of README
 This README file covers the following:
 
 Purpose of the script.
+To test APIs documented in restful-booker
 
 Installation and setup.
+Install the required libraries and then run using python and the test name test_get_all_bookings.py
 
 Explanation of each function.
 
