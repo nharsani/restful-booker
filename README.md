@@ -1,4 +1,4 @@
-`README.md` for API testing script test_booking.py
+`README.md` for API testing script test_get_all_bookings.py
 
 ---
 
@@ -9,6 +9,11 @@
 ## 📌 Overview
 
 This Python-based test suite is designed to validate various endpoints of the **[Restful Booker API](https://restful-booker.herokuapp.com)**. It performs full **CRUD operations** (Create, Read, Update, Delete), logs all interactions, and generates a styled **HTML log report** for easier review and analysis.
+
+The script in the main branch test_get_all_bookings.py does not require any pytest environment. And can be run directly using command python test_get_all_bookings.py
+However if you want to run it using pytest you can use the branch resful-booker/run_using_pytest which has updated README_Pytest as well as the updated test case test_booking.py
+The code written under run_using_pytest is using fixtures to enable pytest execution.
+
 
 ---
 
