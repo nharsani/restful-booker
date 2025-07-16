@@ -29,30 +29,24 @@ This repository contains an automated test suite written in **Python** using **P
 ### 1. Clone the Repository
 
 ```bash
+1. Clone the Repository
 git clone https://github.com/your-username/restful-booker-tests.git
 cd restful-booker-tests
+
 2. Create a Virtual Environment (optional but recommended)
-bash
-Copy
-Edit
+
 python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-3. Install Dependencies
-bash
-Copy
-Edit
-pip install -r requirements.txt
-If requirements.txt is not available, simply install:
 
-bash
-Copy
-Edit
+3. Install Dependencies
+pip install -r requirements.txt
+
+If requirements.txt is not available, simply install:
 pip install pytest requests
+
 4. Run the Test Suite
-bash
-Copy
-Edit
 pytest -v test_booking.py
+
 📂 File Structure
 pgsql
 Copy
@@ -62,6 +56,7 @@ Edit
 ├── api_response.log      # Auto-generated log file
 ├── api_response.html     # HTML version of the log
 └── README.md             # Project documentation
+
 🧪 Test Scenarios
 Test Name	Description
 test_get_all_bookings	Retrieves all booking IDs
@@ -79,6 +74,7 @@ Edit
   "username": "admin",
   "password": "password123"
 }
+
 🧹 Cleanup
 After tests run, created bookings are automatically deleted to keep the environment clean.
 
@@ -91,29 +87,25 @@ A styled HTML version of the log is generated as api_response.html
 Logs are styled and presented in an HTML table:
 
 html
-Copy
-Edit
+
 <tr class="info">
   <td class="timestamp">2025-07-15 10:01:00</td>
   <td>INFO</td>
   <td>Booking 1 created with ID: 123</td>
 </tr>
+
 📧 Contact
 For questions or improvements, please open an issue or submit a pull request.
 Email: nharsani@yahoo.in
 
 ✅ Happy Testing!
 
-yaml
-Copy
-Edit
+Happy Testing
 
 ---
 
 ✅ requirements.txt
-shell
-Copy
-Edit
+
 pytest>=7.0
 requests>=2.25.1
 
