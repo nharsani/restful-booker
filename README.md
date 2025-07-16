@@ -4,7 +4,7 @@
 
 ### 📄 README.md
 
-# 🧪 Restful Booker API Testing Script (Pytest)
+# 🧪 Restful Booker API Testing Script
 
 ## 📌 Overview
 
@@ -29,7 +29,6 @@ This Python-based test suite is designed to validate various endpoints of the **
 
 ### Required Python Libraries
 
-* `pytest`
 * `requests`
 * `json` *(standard library)*
 * `logging` *(standard library)*
@@ -42,7 +41,7 @@ This Python-based test suite is designed to validate various endpoints of the **
 To install the required libraries, run:
 
 ```bash
-pip install pytest requests
+pip install requests
 ```
 
 > Note: `json`, `logging`, and `os` are built-in and do not require separate installation.
@@ -83,10 +82,10 @@ pip install pytest requests
 
 ## ▶️ Running the Script
 
-Use `pytest` to run the test suite:
+Use `python` to run the test suite:
 
 ```bash
-pytest -v test_booking.py
+python test_get_all_bookings.py
 ```
 
 This will:
@@ -108,7 +107,7 @@ This will:
 ## 📤 Sample Console Output
 
 ```bash
-All booking IDs retrieved: [{"bookingid": 1, "firstname": "John", ...}]
+All booking IDs retrieved: [{"bookingid": 1, "firstname": "Naveen", ...}]
 Successfully created first booking with ID: 12345
 Successfully updated first booking with ID: 12345
 Successfully deleted booking with ID: 12345
