@@ -46,9 +46,7 @@ pip install pytest requests
 pytest -v test_booking.py
 
 📂 File Structure
-pgsql
-Copy
-Edit
+
 .
 ├── test_booking.py       # Main test file
 ├── api_response.log      # Auto-generated log file
@@ -65,9 +63,6 @@ test_convert_logs_to_html	Converts api_response.log to HTML report
 🔒 Authentication
 Some operations (update/delete) require a token. The suite authenticates using:
 
-json
-Copy
-Edit
 {
   "username": "admin",
   "password": "password123"
