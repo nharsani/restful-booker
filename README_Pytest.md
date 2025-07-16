@@ -1,9 +1,7 @@
-README.md for your Pytest-based API test suite that interacts with the Restful Booker API:
+README.md for Pytest-based API test suite that interacts with the Restful Booker API:
 
 ✅ README.md
-markdown
-Copy
-Edit
+
 # 🧪 Restful Booker API Test Suite (Pytest)
 
 This repository contains an automated test suite written in **Python** using **Pytest** to interact with the [Restful Booker API](https://restful-booker.herokuapp.com). The suite performs full CRUD operations: creating bookings, updating bookings, retrieving bookings, and deleting bookings.
