@@ -1,182 +1,186 @@
-**API Testing Script for Restful Booker**
+`README.md` for API testing script test_booking.py
 
-Overview
-This Python script is designed to test various API endpoints of the Restful Booker service. It includes functions for performing CRUD operations (Create, Read, Update, Delete) and logs all the interactions into a log file. At the end, the log is converted into an HTML file for easy review.
+---
 
-The script makes use of the following API actions:
+### 📄 README.md
 
-GET: Retrieve all bookings.
+# 🧪 Restful Booker API Testing Script (Pytest)
 
-POST: Create new bookings.
+## 📌 Overview
 
-PATCH: Update booking details.
+This Python-based test suite is designed to validate various endpoints of the **[Restful Booker API](https://restful-booker.herokuapp.com)**. It performs full **CRUD operations** (Create, Read, Update, Delete), logs all interactions, and generates a styled **HTML log report** for easier review and analysis.
 
-DELETE: Delete a booking.
+---
 
-It logs the details of each API request and response and generates an HTML report for easier analysis.
+## 🔧 Features
 
-Prerequisites
-Python 3.x
+* ✅ **GET**: Retrieve all booking IDs
+* 🆕 **POST**: Create new bookings
+* ✏️ **PATCH**: Update booking details
+* ❌ **DELETE**: Delete bookings
+* 📄 **Logging**: Logs each request and response
+* 🌐 **HTML Report**: Converts logs to a formatted HTML file (`api_response.html`)
 
-Required Python Libraries:
+---
 
-requests
+## 📥 Prerequisites
 
-json
+* Python **3.x** installed
 
-logging
+### Required Python Libraries
 
-os
+* `pytest`
+* `requests`
+* `json` *(standard library)*
+* `logging` *(standard library)*
+* `os` *(standard library)*
 
-Install Required Libraries
-To install the required libraries, run the following command:
+---
 
-bash
-Copy
-Edit
-pip install requests
-pip install json
-pip install logging
-pip install os
+## 📦 Installation
 
-Script Details
-Functions
-test_get_all_bookings():
+To install the required libraries, run:
 
-Sends a GET request to retrieve all booking IDs.
+```bash
+pip install pytest requests
+```
 
-Logs the response status and data.
+> Note: `json`, `logging`, and `os` are built-in and do not require separate installation.
 
-test_create_3_bookings():
+---
 
-Sends POST requests to create 3 new bookings.
+## 📂 Script Overview
 
-Logs the response for each booking creation.
+### 🔍 Test Functions
 
-Returns the booking IDs for further updates and deletions.
+#### `test_get_all_bookings()`
 
-test_updates_2_bookings(bookingid1, price1, bookingid2, price2):
+* Sends a **GET** request to retrieve all booking IDs.
+* Logs the response status and content.
 
-Sends PATCH requests to update the prices of two bookings (given their IDs).
+#### `test_create_3_bookings()`
 
-Requires authentication (username and password).
+* Sends **POST** requests to create 3 bookings.
+* Logs each booking's response and stores their IDs for further use.
 
-Logs the response for each booking update.
+#### `test_updates_2_bookings(bookingid1, price1, bookingid2, price2)`
 
-test_deletes_1_booking(bookingid):
+* Sends **PATCH** requests to update prices of two bookings.
+* Requires authentication.
+* Logs response and success status.
 
-Sends a DELETE request to remove a booking by ID.
+#### `test_deletes_1_booking(bookingid)`
 
-Logs the deletion status and response.
+* Sends a **DELETE** request to remove a booking by ID.
+* Logs the result of the operation.
 
-convert_logs_to_html():
+#### `test_convert_logs_to_html()`
 
-Converts the api_response.log file to an HTML file (api_response.html).
+* Converts the plain-text log file `api_response.log` into a styled HTML file `api_response.html`.
+* Differentiates log levels (INFO in green, ERROR in red).
 
-Formats the log entries as an HTML table with styling for easy reading.
+---
 
-Differentiates log levels with color (INFO in green, ERROR in red).
+## ▶️ Running the Script
 
-Example Usage
-To run the script:
-python test_get_all_bookings.py
+Use `pytest` to run the test suite:
 
-Run the Script:
-python test_get_all_bookings.py
+```bash
+pytest -v test_booking.py
+```
 
-This will execute all the tests sequentially (GET, POST, PATCH, DELETE) and generate the HTML log.
+This will:
 
-bash
-Copy
-Edit
-python api_test_script.py
-Generated Files:
+1. Perform all API operations.
+2. Log responses in `api_response.log`.
+3. Convert the log into `api_response.html` for easier visualization.
 
-api_response.log: A plain text file containing the log entries for each API request and response.
+---
 
-api_response.html: A human-readable HTML version of the log file, formatted as a table with timestamps, log levels, and messages.
+## 📁 Generated Files
 
-Example Output
-Console Output: The script prints the status of each API request to the console. For example:
+* `api_response.log`: Raw text log of each API request and response.
+* `api_response.html`: Styled HTML version of the log.
+* `test_booking.py`: Main test script.
 
-csharp
-Copy
-Edit
-All booking IDs retrieved successfully:
-[{ "bookingid": 1, "firstname": "John", ... }]
+---
+
+## 📤 Sample Console Output
+
+```bash
+All booking IDs retrieved: [{"bookingid": 1, "firstname": "John", ...}]
 Successfully created first booking with ID: 12345
 Successfully updated first booking with ID: 12345
 Successfully deleted booking with ID: 12345
-Log File (api_response.log): The log file will contain entries like:
+```
 
-yaml
-Copy
-Edit
+---
+
+## 📄 Sample Log Entry (`api_response.log`)
+
+```
 2025-07-15 12:34:56,789 - INFO - Get Request Status Code: 200
-2025-07-15 12:34:57,890 - INFO - First Booking Done with Status Code: 200
-2025-07-15 12:35:01,123 - ERROR - Booking ID 12345 Deleted with Status Code: 404
-HTML Log (api_response.html): The HTML file will have a table like this:
+2025-07-15 12:35:01,123 - INFO - Booking 1 created with ID: 12345
+2025-07-15 12:35:10,456 - ERROR - Booking update failed with Status Code: 500
+```
 
-html
-Copy
-Edit
-<html>
-    <head>
-        <title>API Response Log</title>
-        <style>
-            body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; }
-            table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-            th, td { padding: 10px; border: 1px solid #ddd; }
-            th { background-color: #f2f2f2; text-align: left; }
-            .info { color: #4CAF50; }
-            .error { color: #F44336; }
-            .timestamp { font-size: 0.9em; color: #aaa; }
-        </style>
-    </head>
-    <body>
-        <h2>API Response Log</h2>
-        <table>
-            <tr><th>Timestamp</th><th>Log Level</th><th>Message</th></tr>
-            <tr class="info">
-                <td class="timestamp">2025-07-15 12:34:56</td>
-                <td>INFO</td>
-                <td>Get Request Status Code: 200</td>
-            </tr>
-            <tr class="error">
-                <td class="timestamp">2025-07-15 12:35:01</td>
-                <td>ERROR</td>
-                <td>Booking ID 12345 Deleted with Status Code: 404</td>
-            </tr>
-        </table>
-    </body>
-</html>
-Troubleshooting
-Authentication Issues:
+---
 
-Ensure that you are using the correct credentials (username and password) for the auth API endpoint.
+## 🌐 Sample HTML Output (`api_response.html`)
 
-API Rate Limits:
+```html
+<tr class="info">
+  <td class="timestamp">2025-07-15 12:34:56</td>
+  <td>INFO</td>
+  <td>Get Request Status Code: 200</td>
+</tr>
+<tr class="error">
+  <td class="timestamp">2025-07-15 12:35:10</td>
+  <td>ERROR</td>
+  <td>Booking update failed with Status Code: 500</td>
+</tr>
+```
 
-If the server is slow or unresponsive, check for rate limits or ensure the service is up.
+---
 
-File Permissions:
+## 🛠️ Troubleshooting
 
-Ensure that the script has the necessary permissions to write to the log and HTML files (api_response.log and api_response.html).
+### ✅ Authentication Issues
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+* Ensure you're using valid credentials:
 
-End of README
-This README file covers the following:
+  ```json
+  {
+    "username": "admin",
+    "password": "password123"
+  }
+  ```
 
-Purpose of the script.
-To test APIs documented in restful-booker
+### 🔁 API Rate Limits or Downtime
 
-Installation and setup.
-Install the required libraries and then run using python and the test name test_get_all_bookings.py
+* The Heroku API may be temporarily down or rate-limited. Retry after a short wait.
 
-Explanation of each function.
+### 🔒 File Permission Errors
 
-How to run the script and interpret the output.
+* Make sure your script has write access to create `api_response.log` and `api_response.html`.
 
-Troubleshooting common issues.
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**. See the `LICENSE` file for details.
+
+---
+
+## 📚 Summary
+
+* ✅ A Pytest-based automated API testing framework
+* 🎯 Designed to work with the public Restful Booker API
+* 📈 Generates both text and HTML log reports
+* 💡 Easily customizable for other APIs
+
+---
+
+🔚 **End of README**
+
+
